@@ -2,8 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Filter {
 
@@ -14,18 +13,52 @@ public class Filter {
     }
 
     public List<Integer> filterEven() {
-        throw new NotImplementedException();
+        Iterator<Integer> it = this.array.iterator();
+        List<Integer> myList = new ArrayList<>();
+        while (it.hasNext()) {
+            int tmp = it.next();
+            if (tmp % 2 == 0) {
+                myList.add(tmp);
+            }
+        }
+        return myList;
     }
 
     public List<Integer> filterMultipleOfThree() {
-        throw new NotImplementedException();
+        Iterator<Integer> it = this.array.iterator();
+        List<Integer> myList = new ArrayList<>();
+        while (it.hasNext()) {
+            int tmp = it.next();
+            if (tmp % 3 == 0) {
+                myList.add(tmp);
+            }
+        }
+        return myList;
     }
 
     public List<Integer> getCommonElements(List<Integer> firstList, List<Integer> secondList) {
-        throw new NotImplementedException();
+        List<Integer> commonList = new ArrayList<>();
+        Iterator<Integer> it=firstList.iterator();
+        while (it.hasNext()) {
+            int tmp = it.next();
+            if (secondList.contains(tmp) && !commonList.contains(tmp)) {
+                commonList.add(tmp);
+            }
+        }
+
+        return commonList;
     }
 
     public List<Integer> getDifferentElements() {
-        throw new NotImplementedException();
+        Iterator<Integer> it = this.array.iterator();
+        List<Integer> resList = new ArrayList<>();
+        while (it.hasNext()) {
+            int tmp = it.next();
+            if (!resList.contains(tmp)) {
+                resList.add(tmp);
+            }
+        }
+
+        return resList;
     }
 }

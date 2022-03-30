@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.List;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
@@ -16,6 +17,7 @@ public class AddTest {
         int rightBorder = 10;
 
         Add add = new Add();
+        add.getSumOfEvens(leftBorder,rightBorder);
         assertThat(add.getSumOfEvens(leftBorder, rightBorder)).isEqualTo(30);
         assertThat(add.getSumOfEvens(rightBorder, leftBorder)).isEqualTo(30);
     }

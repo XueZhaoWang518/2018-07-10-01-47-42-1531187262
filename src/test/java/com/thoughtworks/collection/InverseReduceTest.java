@@ -21,7 +21,8 @@ public class InverseReduceTest {
         Integer[] result = new Integer[]{7, 5, 3, 1};
         List<Integer> resultList = Arrays.asList(result);
 
-        assertThat(inverseReduce.divideToSmaller(9)).isEqualTo(resultList);
+        List<Integer> actual = inverseReduce.divideToSmaller(9);
+        assertThat(actual).isEqualTo(resultList);
     }
 }
 

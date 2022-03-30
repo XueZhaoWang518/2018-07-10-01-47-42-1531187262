@@ -31,6 +31,7 @@ public class FlatenTest {
         List<Integer> resultList = Arrays.asList(result);
 
         Flaten flaten = new Flaten(array);
-        assertThat(flaten.transformToUnrepeatedOneDimesional()).isEqualTo(resultList);
+        List<Integer> actual = flaten.transformToUnrepeatedOneDimesional();
+        assertThat(actual).isEqualTo(resultList);
     }
 }

@@ -13,7 +13,13 @@ public class Reduce {
     }
 
     public int getMaximum() {
-        throw new NotImplementedException();
+        int maximum= arrayList.get(0);
+        for (Integer i : this.arrayList) {
+            if (maximum < i) {
+                maximum = i;
+            }
+        }
+        return maximum;
     }
 
     public double getMinimum() {
@@ -31,16 +37,38 @@ public class Reduce {
     }
 
     public int getFirstEven() {
-        throw new NotImplementedException();
+        int res = 0;
+        for (Integer i:this.arrayList ) {
+            if (i % 2 == 0) {
+                res = i;
+                break;
+            }
+        }
+        return res;
     }
 
     public int getIndexOfFirstEven() {
-        throw new NotImplementedException();
+        int res = 0;
+        for (Integer i:this.arrayList ) {
+            if (i % 2 == 0) {
+                res = this.arrayList.indexOf(i)-1;
+            }
+        }
+        return res;
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        throw new NotImplementedException();
-    }
+        if (arrayList.size() != this.arrayList.size()) {
+            return false;
+        } else {
+            for (Integer i:this.arrayList ) {
+                if (i != arrayList.get(this.arrayList.indexOf(i))) {
+                    return false;
+                }
+                }
+            return true;
+            }
+        }
 
 
 
